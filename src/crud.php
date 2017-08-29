@@ -29,11 +29,18 @@
     # @array, Os parâmetros das Javascript
     private $javascript;
     
+    private $minifyCSS;
+    
+    private $minifyJS;
+
+
     public function __construct() {
       $this->map = SITE_MAP;
       $this->meta = array();
       $this->stylesheet = array();
       $this->javascript = array();
+      $this->minifyCSS = new Minify\CSS();
+      $this->minifyJS = new Minify\JS();
     }
     
     
@@ -199,7 +206,8 @@
      * 	@param string $_href  
     */    
     public function InterfaceStylesheet($_href){
-     $_Style = "<link href={$_href} rel=stylesheet type=text/css />";
+      $_Style = $this->minifyCSS->minify($_href);
+     //$_Style = "<link href={$_href} rel=stylesheet type=text/css />";
      return $_Style;
     }
 
