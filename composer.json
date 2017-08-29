@@ -1,0 +1,20 @@
+{
+  "name": "luquinhasbrito/crud",
+  "description": "",
+  "type": "library",
+  "license": "1.0.0",
+  "authors": [
+    {
+      "name": "Web Design Technologies",
+      "email": "webdesgintechnologies@outlook.com.br"
+    }
+  ],
+  "require": {
+    "php": "^5.3.3 || ^7.0"
+  },
+  "autoload": {
+    "classmap": [
+      "src/crud.php"
+    ]
+  }
+}
